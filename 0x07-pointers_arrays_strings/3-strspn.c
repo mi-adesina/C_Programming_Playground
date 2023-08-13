@@ -10,5 +10,16 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
+	int i = 0, j, count = 0;
 
+	while (*(s + i) != ' ')
+	{
+		for (j = 0; *(accept + j); j++)
+		{
+			if (accept[j] == s[i])
+				count++;
+		}
+		i++;
+	}
+	return (count);
 }
